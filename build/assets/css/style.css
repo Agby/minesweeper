@@ -1,0 +1,129 @@
+@charset "utf-8";
+html, body {    
+    margin: 0;
+    height: 100%;
+    overflow: hidden;
+    user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -webkit-user-select: none;
+}
+.main-container {
+    width: 100%;
+    height: 100%;
+}
+.center {    
+    display: -webkit-flex;
+    display: flex;
+    align-items: center;
+    -webkit-align-items: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+}
+.animate-all {
+    transition: all 500ms cubic-bezier(0.2, 0.3, 0.25, 0.9);
+    -webkit-transition: all 500ms cubic-bezier(0.2, 0.3, 0.25, 0.9);
+    -ms-transition: all 500ms cubic-bezier(0.2, 0.3, 0.25, 0.9);
+    -moz-transition: all 500ms cubic-bezier(0.2, 0.3, 0.25, 0.9);
+}
+#minesweeper {
+}
+.MineCount
+{
+    font-weight: bold;
+    font-size: 24px;
+    color:brown;
+}
+.board {
+    width:500px;
+    height:500px;
+    border: 1px solid #000;
+    /*-webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;*/
+
+    display: -webkit-flex;
+    display: flex;
+
+    -webkit-flex-direction: row; /* Flexbox 內容元素 的排列方向*/
+    flex-direction: row;
+    -webkit-flex-wrap: wrap;/*這個屬性負責的是讓內容的元素換行*/
+    flex-wrap: wrap;    
+    -webkit-flex-flow: row wrap;
+    flex-flow: row wrap;
+}
+.board > .rect {
+    width: 25px;
+    height: 25px;
+    background-color: #e3e3e3;
+    border: 1px solid #000;
+    cursor: pointer;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.board > .rect:hover {
+    background-color: blue;
+}
+.board > .empty {
+    background-color: gray;
+    color:white;
+}
+.board > .boom {
+    background-color: red;
+}
+.board > .boom:after {
+    content: "\1F627";
+}
+.board > .flag:after {
+    content: "\2714";
+}
+.board > .unknow:after {
+    content: "?";
+}
+.mask {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    background-color: rgba(47, 47, 47, 0.75);
+}
+.dialog {
+    width: 300px;
+    height: 200px;
+    border: 1px solid #000;
+    border-radius: 5px;
+    background-color: #d9d9d9;
+    -webkit-flex-direction: column;
+    flex-direction: column;
+}
+.dialog > .message {
+    font-size: 30px;
+    font-weight: bold;
+    color:red;
+    padding: 5px 5px 5px 5px;
+}
+.dialog > .btn {
+    margin-top: 20px;
+    padding: 10px 30px 10px 30px;
+    background-color: #ffffff;
+    border: 1px solid #000;
+    border-radius: 5px;
+}
+.dialog > .btn:hover {
+    background-color: #484545;
+    color: #ffffff;
+    cursor: pointer;
+}
+.dialog > .CInput{
+    cursor: default;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 8px 8px 8px 8px;
+} 
+.inputClass{
+    cursor: default;
+    width:50px;
+} 
